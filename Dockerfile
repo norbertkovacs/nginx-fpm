@@ -150,6 +150,9 @@ COPY hostingstart.html /home/site/wwwroot/index.html
 COPY phpmyadmin-config.inc.php $PHPMYADMIN_SOURCE/
 COPY mariadb.cnf /etc/mysql/
 
+#opcache
+COPY opcache.ini /etc/php/7.0/mods-available/opcache.ini
+
 RUN \
    echo "<?php phpinfo();" > /home/site/wwwroot/index.php 
 
